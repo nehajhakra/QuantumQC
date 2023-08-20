@@ -1,4 +1,3 @@
-# QuantumQC
 Quantum computing is a field of computing that uses quantum phenomena such as superposition and entanglement to perform operations on data. It is a rapidly growing field with potential applications in fields such as cryptography, chemistry, and optimization. Quantum computers can solve certain problems much faster than classical computers.
 In this project, Quantum Image Processing is implemented with qiskit using QPIE model.
 Problem Statement :-
@@ -6,15 +5,16 @@ We implement, using qiskit, a model called Quantum Probability Image Encoding, a
 The objective of this project is to exploit the Quantum Fourier Transform to convert the image, encoded using QPIE, into the frequency domain for image processing purposes such as denoising, edge detection, image classifiers etc.
 Goals:
 The goal is to develop a Python module using Qiskit to achieve the following:
-Classical image processing
-Apply Quantum Probability Image Encoding (QPIE)
-Apply various Quantum Image Processing
+1.Classical image processing
+2.Apply Quantum Probability Image Encoding (QPIE)
+3.Apply various Quantum Image Processing
 Proposed Implementation
-Classical Image Processing This step is required to make sure the image is ready to be processed by a Quantum Computer with ease
-Changing from RGB to grayscale format
-Split the image into 8 x 8 chunks for easier processing using a Quantum Simulator
+Classical Image Processing -
+1.This step is required to make sure the image is ready to be processed by a Quantum Computer with ease
+2.Changing from RGB to grayscale format
+3.Split the image into 8 x 8 chunks for easier processing using a Quantum Simulator
 Quantum Probability Image Encoding (QPIE) The quantum encoding or Quantum Image Representation (QImR) step involves the transformation of the data from a classical to a quantum image representation model. We decided to use QPIE because of its notable advantage of using the least amount of qubits for encoding. This is done by converting the 2D image matrix to a 1D array and normalising it. The normalised array is passed as a Statevector to the quantum circuit.
 Quantum Image Processing
-We tried implementing denoising and edge detection.
-Denoising was performed by applying a QFT gate to the Statevector passed initially. The frequency vector is measured and the higher frequency amplitudes are set to zero under the assumption that most of the noise resides in higher frequencies. The new Statevector is re-normalised and passed through an inverse QFT to retrieve the image.
+1.We tried implementing denoising and edge detection.
+2.Denoising was performed by applying a QFT gate to the Statevector passed initially. The frequency vector is measured and the higher frequency amplitudes are set to zero under the assumption that most of the noise resides in higher frequencies. The new Statevector is re-normalised and passed through an inverse QFT to retrieve the image.
 Edge DetectionEdge detection was performed using QHED algorithm. The image is split into 8 x 8 chunks and each tile is passed through the edge detection module. Once all tiles are processed, they are stitched back together to form back the original dimensions of the image, consisting of the edges only.
